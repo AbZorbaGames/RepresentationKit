@@ -25,7 +25,7 @@
 import Foundation
 
 /// Describes a data representation
-public protocol DataRepresentation: Representation, Representable {
+public protocol DataRepresentation: AbzorbaRepresentation, Representable {
 
     /// the data 
     var data: Data { get }

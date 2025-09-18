@@ -30,16 +30,16 @@ import Foundation
 ///
 /// How each `Representation` represents the given data is an implementation 
 /// detail.
-public protocol Representation {
+public protocol AbzorbaRepresentation {
     
     /// Returns a `Representation` probably enriched, with the given (key,value) pair.
     /// - Parameters:
     ///   - key: a key to identify the value
     ///   - value: a value
-    func with<Key,Value>(key: Key, value: Value) -> Representation where Key: LosslessStringConvertible & Hashable
+    func with<Key,Value>(key: Key, value: Value) -> AbzorbaRepresentation where Key: LosslessStringConvertible & Hashable
 }
 
-public extension Representation {
+public extension AbzorbaRepresentation {
     
     /// Returns a `Representation` probably enriched, with the given (key,value) 
     /// pair. This is a strongly typed alternative
@@ -48,7 +48,7 @@ public extension Representation {
     ///   - key: a key to identify the value
     ///   - value: a value
     func with<Key,Value,Rep>(key: Key, value: Value) -> Rep
-        where Key: LosslessStringConvertible & Hashable, Rep: Representation {
+        where Key: LosslessStringConvertible & Hashable, Rep: AbzorbaRepresentation {
         return self.with(key: key, value: value) as! Rep
     }
     
@@ -59,7 +59,7 @@ public extension Representation {
     ///   - value: a value
     ///   - validate: a closure that takes the value and returns the value if 
     ///     to validate or `nil` to invalidate. - parameter: a
-    func potentiallyWith<Key, Value, Validated>(key: Key, value: Value, _ validate: (Value) -> Validated?) -> Representation where Key: LosslessStringConvertible & Hashable {
+    func potentiallyWith<Key, Value, Validated>(key: Key, value: Value, _ validate: (Value) -> Validated?) -> AbzorbaRepresentation where Key: LosslessStringConvertible & Hashable {
         guard let v = validate(value) else { return self }
         return self.with(key: key, value: v)
     }

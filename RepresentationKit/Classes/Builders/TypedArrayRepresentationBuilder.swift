@@ -39,7 +39,7 @@ final public class TypedArrayRepresentationBuilder<E>: TypedArrayRepresentation 
         self._array = array
     }
     
-    final public func with<Key,Value>(key: Key, value: Value) -> Representation where Key: LosslessStringConvertible & Hashable {
+    final public func with<Key,Value>(key: Key, value: Value) -> AbzorbaRepresentation where Key: LosslessStringConvertible & Hashable {
         var array: [Element] = self._array
         array.append(value as! Element)
         return TypedArrayRepresentationBuilder(array)

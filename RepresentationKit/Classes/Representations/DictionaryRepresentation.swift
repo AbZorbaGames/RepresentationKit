@@ -46,7 +46,7 @@ import Foundation
 ///     print(representation.dictionary)
 ///     // Prints ["name" : "Super title", "edition" : "Pepper's"]
 ///
-public protocol DictionaryRepresentation: Representation, Representable {
+public protocol DictionaryRepresentation: AbzorbaRepresentation, Representable {
     
     /// the dictionary thats contains all the key-value pairs
     var dictionary: [String: Any] { get }
@@ -54,8 +54,8 @@ public protocol DictionaryRepresentation: Representation, Representable {
 
 public extension DictionaryRepresentation {
     
-    func represent(using representation: Representation) -> Representation {
-        return self.dictionary.reduce(representation) { (rep, pair) -> Representation in
+    func represent(using representation: AbzorbaRepresentation) -> AbzorbaRepresentation {
+        return self.dictionary.reduce(representation) { (rep, pair) -> AbzorbaRepresentation in
             rep.with(key: pair.0, value: pair.1)
         }
     }

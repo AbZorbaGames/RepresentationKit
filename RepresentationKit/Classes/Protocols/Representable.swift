@@ -33,7 +33,7 @@ public protocol Representable {
     /// Returns a `Representation` enriched with the key-value pairs describing
     /// this instance.
     /// - Parameter representation: the representation to fill
-	func represent(using representation: Representation) -> Representation
+	func represent(using representation: AbzorbaRepresentation) -> AbzorbaRepresentation
 }
 
 public extension Representable {
@@ -42,20 +42,20 @@ public extension Representable {
     /// this instance.
     /// This is a strongly typed alternative
     /// - Parameter representation: the representation to fill
-    func represent<Rep>(using representation: Rep) -> Rep where Rep: Representation {
+    func represent<Rep>(using representation: Rep) -> Rep where Rep: AbzorbaRepresentation {
         return self.represent(using: representation) as! Rep
     }
 
     /// Default empty representation. This default implementation does nothing.
     /// - Parameter representation: the representation to fill
-	func represent(using representation: Representation) -> Representation {
+	func represent(using representation: AbzorbaRepresentation) -> AbzorbaRepresentation {
 		return representation
 	}
 }
 
 public extension CustomStringConvertible where Self : Representable {
     
-    func represent(using representation: Representation) -> Representation {
+    func represent(using representation: AbzorbaRepresentation) -> AbzorbaRepresentation {
         return representation.with(key: "description", value: self.description)
     }
 }

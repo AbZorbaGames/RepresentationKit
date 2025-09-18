@@ -26,7 +26,7 @@ import Foundation
 
 public extension Collection where Self.Iterator.Element: Representable {
     
-    func represent<Rep>(using representation: Rep) -> Rep where Rep: Representation {
+    func represent<Rep>(using representation: Rep) -> Rep where Rep: AbzorbaRepresentation {
         var r = representation
         
         for (index,element) in self.enumerated() {

@@ -24,7 +24,7 @@
 
 import Foundation
 
-final public class DeepArrayRepresentationBuilder<Rep>: TypedArrayRepresentation where Rep: Representation {
+final public class DeepArrayRepresentationBuilder<Rep>: TypedArrayRepresentation where Rep: AbzorbaRepresentation {
     
     public typealias Element = Rep
     
@@ -45,7 +45,7 @@ final public class DeepArrayRepresentationBuilder<Rep>: TypedArrayRepresentation
         self._array = array
     }
     
-    final public func with<Key,Value>(key: Key, value: Value) -> Representation where Key: LosslessStringConvertible & Hashable {
+    final public func with<Key,Value>(key: Key, value: Value) -> AbzorbaRepresentation where Key: LosslessStringConvertible & Hashable {
         guard let v = value as? Representable else {
             return self
         }

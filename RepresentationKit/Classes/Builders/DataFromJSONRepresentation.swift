@@ -30,7 +30,7 @@ public struct DataFromJSONRepresentation: DataRepresentation  {
     }
     private let json: JSONRepresentationBuilder
 
-    public func with<Key, Value>(key: Key, value: Value) -> Representation where Key : Hashable, Key : LosslessStringConvertible {
+    public func with<Key, Value>(key: Key, value: Value) -> AbzorbaRepresentation where Key : Hashable, Key : LosslessStringConvertible {
         return DataFromJSONRepresentation(builder: self.json.with(key: key, value: value))
     }
 

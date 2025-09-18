@@ -26,7 +26,7 @@ import Foundation
 
 extension Data: Representable {
     
-    public func represent(using representation: Representation) -> Representation {
+    public func represent(using representation: AbzorbaRepresentation) -> AbzorbaRepresentation {
         return representation.with(key: "data", value: self)
     }
 }

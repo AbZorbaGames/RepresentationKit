@@ -1,9 +1,9 @@
 {
   "name": "RepresentationKit",
-  "version": "2.5",
+  "version": "2.6",
   "summary": "Create representation of objects.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/averello/RepresentationKit",
+  "homepage": "https://github.com/AbZorbaGames/RepresentationKit.git",
   "license": {
     "type": "Apache 2.0",
     "file": "LICENSE"
@@ -12,12 +12,12 @@
     "Georges Boumis": "developer.george.boumis@gmail.com"
   },
   "source": {
-    "git": "https://github.com/averello/RepresentationKit.git",
-    "tag": "2.5"
+    "git": "https://github.com/AbZorbaGames/RepresentationKit.git",
+    "tag": "2.6"
   },
   "platforms": {
-    "ios": "8.0",
-    "osx": "10.9"
+    "ios": "13.0",
+    "osx": "13.0"
   },
   "source_files": "RepresentationKit/Classes/**/*",
   "frameworks": "Foundation"

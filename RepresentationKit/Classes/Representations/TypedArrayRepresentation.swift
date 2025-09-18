@@ -47,7 +47,7 @@ import Foundation
 ///     // Prints ["Super title", "Pepper's"]
 ///
 /// - SeeAlso: `ArrayRepresentation`
-public protocol TypedArrayRepresentation: Representation, Representable {
+public protocol TypedArrayRepresentation: AbzorbaRepresentation, Representable {
     associatedtype Element
     
     /// the typed array of the represented values.
@@ -56,7 +56,7 @@ public protocol TypedArrayRepresentation: Representation, Representable {
 
 public extension TypedArrayRepresentation {
     
-    func represent<Rep>(using representation: Rep) -> Rep where Rep: Representation {
+    func represent<Rep>(using representation: Rep) -> Rep where Rep: AbzorbaRepresentation {
         var r = representation
         
         for (index,element) in self.array.enumerated() {

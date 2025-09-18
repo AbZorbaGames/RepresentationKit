@@ -26,7 +26,7 @@ import Foundation
 
 extension Dictionary where Key: LosslessStringConvertible {
     
-    public func represent<Rep>(using representation: Rep) -> Rep where Rep: Representation {
+    public func represent<Rep>(using representation: Rep) -> Rep where Rep: AbzorbaRepresentation {
         return self.reduce(representation) { (rep, pair) -> Rep in
             let key = pair.key
             let value = pair.value

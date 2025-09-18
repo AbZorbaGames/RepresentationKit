@@ -38,7 +38,7 @@ final public class ArrayRepresentationBuilder: ArrayRepresentation  {
         self._array = array
     }
     
-    final public func with<Key,Value>(key: Key, value: Value) -> Representation where Key: LosslessStringConvertible & Hashable {
+    final public func with<Key,Value>(key: Key, value: Value) -> AbzorbaRepresentation where Key: LosslessStringConvertible & Hashable {
         var array: [Any] = self._array
         array.append(value)
         return ArrayRepresentationBuilder(array)

@@ -2,8 +2,8 @@ use_frameworks!
 pod 'RepresentationKit', :path => '../'
 
 target 'RepresentationKit_Tests' do
-	platform :ios, '8.0'
+	platform :ios, '13.0'
 end
 target 'RepresentationKitMac_Tests' do
-	platform :macos, '10.9'
+	platform :macos, '13.0'
 end
